@@ -68,18 +68,6 @@ function doQueue(args, message) {
   }
 
   if (args.startsWith('http')) {
-    for (var i = 0; i < args.length; i++) {
-        for(var j = 0; j < blacklist.nsfwtags.length; j++)
-        {
-            if(blacklist.nsfwtags[j].indexOf(args[i]) != -1)
-            {
-                var killsearch = true;
-            }
-        }
-    }
-    if (killsearch == true){
-      message.reply("Sorry, I can't do that")
-    } else {
       TrackHelper.getVideoFromUrl(args).then(track => {
         Queue.add(track, message);
       }).catch(err => {
@@ -91,7 +79,6 @@ function doQueue(args, message) {
       message.reply(Helper.wrap(err));
     });
   }}
-}
 
 
 function getVideo(args, message) {
