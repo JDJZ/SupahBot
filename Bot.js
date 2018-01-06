@@ -7,10 +7,6 @@ var WordService = require('./components/wordservice.js');
 var WeatherService = require('./components/weatherservice.js');
 
 var commands = {
-  '!video': {
-    execute: getVideo,
-    description: 'get a youtube video by search word'
-  },
   '!weather': {
     execute: getWeather,
     description: 'get current weather for the given city, defaults to Stockholm'
@@ -78,14 +74,6 @@ function doQueue(args, message) {
       message.reply(Helper.wrap(err));
     });
   }
-}
-
-function getVideo(args, message) {
-  TrackHelper.getRandomTrack(args, 5).then(track => {
-    message.reply(track.url);
-  }).catch(err => {
-    message.reply(Helper.wrap(err));
-  });
 }
 
 function countWordsByUser(args, message) {
@@ -173,7 +161,7 @@ function init() {
     Bot.login(keys.discord);
 
     Queue = registerService(Queue, ['!queue', '!voteskip', '!song']);
-    TrackHelper = registerService(TrackHelper, ['!queue', '!video']);
+    TrackHelper = registerService(TrackHelper, ['!queue']);
     WordService = registerService(WordService, ['!words']);
     WeatherService = registerService(WeatherService, ['!weather']);
   }).catch(console.error);
