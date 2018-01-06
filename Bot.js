@@ -77,23 +77,22 @@ function doQueue(args, message) {
             }
         }
     }
-    If (killsearch == true){
-message.channel.send("Sorry, I can't do that")
-} else {
-    TrackHelper.getVideoFromUrl(args).then(track => {
-      Queue.add(track, message);
-    }).catch(err => {
-      message.reply(Helper.wrap(err));
-    });
-  } else {
+    if (killsearch == true){
+      message.channel.send("Sorry, I can't do that")
+    } else {
+      TrackHelper.getVideoFromUrl(args).then(track => {
+        Queue.add(track, message);
+      }).catch(err => {
+        message.reply(Helper.wrap(err));
+      });
     TrackHelper.getRandomTrack(args, 5).then(track => {
       Queue.add(track, message);
     }).catch(err => {
       message.reply(Helper.wrap(err));
     });
-  }
+  }}
 }
-}
+
 
 function getVideo(args, message) {
   for (var i = 0; i < args.length; i++) {
@@ -105,7 +104,7 @@ function getVideo(args, message) {
             }
         }
     }
-  If (killsearch == true){
+  if (killsearch == true){
 message.channel.send("Sorry, I can't do that")
 } else {
   TrackHelper.getRandomTrack(args, 5).then(track => {
@@ -113,8 +112,8 @@ message.channel.send("Sorry, I can't do that")
    }).catch(err => {
      message.reply(Helper.wrap(err));
   });
- }}
- 
+}}
+
 function countWordsByUser(args, message) {
   WordService.countWordsByUser(args, message);
 }
