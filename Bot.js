@@ -200,7 +200,7 @@ function init() {
     Bot.login(keys.discord);
 
     Queue = registerService(Queue, ['!queue', '!voteskip', '!song']);
-    TrackHelper = registerService(TrackHelper, ['!queue']);
+    TrackHelper = registerService(TrackHelper, ['!queue', '!video']);
     WordService = registerService(WordService, ['!words']);
     WeatherService = registerService(WeatherService, ['!weather']);
   }).catch(console.error);
