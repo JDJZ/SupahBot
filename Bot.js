@@ -6,6 +6,8 @@ var TrackHelper = require('./components/trackhelper.js');
 var WordService = require('./components/wordservice.js');
 var WeatherService = require('./components/weatherservice.js');
 
+Bot.user.setgame('https://discord.io/wolfbot')
+
 var commands = {
   '!weather': {
     execute: getWeather,
