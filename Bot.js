@@ -113,7 +113,7 @@ message.channel.send("Sorry, I can't do that")
    }).catch(err => {
      message.reply(Helper.wrap(err));
   });
- }
+ }}
  
 function countWordsByUser(args, message) {
   WordService.countWordsByUser(args, message);
