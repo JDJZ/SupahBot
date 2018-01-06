@@ -78,7 +78,7 @@ function doQueue(args, message) {
         }
     }
     if (killsearch == true){
-      message.channel.send("Sorry, I can't do that")
+      message.reply("Sorry, I can't do that")
     } else {
       TrackHelper.getVideoFromUrl(args).then(track => {
         Queue.add(track, message);
@@ -105,7 +105,7 @@ function getVideo(args, message) {
         }
     }
   if (killsearch == true){
-message.channel.send("Sorry, I can't do that")
+message.reply("Sorry, I can't do that")
 } else {
   TrackHelper.getRandomTrack(args, 5).then(track => {
      message.reply(track.url);
