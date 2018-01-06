@@ -5,8 +5,14 @@ var Queue = require('./components/queue.js');
 var TrackHelper = require('./components/trackhelper.js');
 var WordService = require('./components/wordservice.js');
 var WeatherService = require('./components/weatherservice.js');
+var killsearch = false
+const blacklist = require("../tagblacklist.json");
 
 var commands = {
+  '!video': {
+    execute: getVideo,
+    description: 'get a youtube video by search word'
+  },
   '!weather': {
     execute: getWeather,
     description: 'get current weather for the given city, defaults to Stockholm'
@@ -62,6 +68,18 @@ function doQueue(args, message) {
   }
 
   if (args.startsWith('http')) {
+    for (var i = 0; i < args.length; i++) {
+        for(var j = 0; j < blacklist.nsfwtags.length; j++)
+        {
+            if(blacklist.nsfwtags[j].indexOf(args[i]) != -1)
+            {
+                var killsearch = true;
+            }
+        }
+    }
+    If (killsearch == true){
+message.channel.send("Sorry, I can't do that")
+} else {
     TrackHelper.getVideoFromUrl(args).then(track => {
       Queue.add(track, message);
     }).catch(err => {
@@ -75,7 +93,28 @@ function doQueue(args, message) {
     });
   }
 }
+}
 
+function getVideo(args, message) {
+  for (var i = 0; i < args.length; i++) {
+        for(var j = 0; j < blacklist.nsfwtags.length; j++)
+        {
+            if(blacklist.nsfwtags[j].indexOf(args[i]) != -1)
+            {
+                var killsearch = true;
+            }
+        }
+    }
+  If (killsearch == true){
+message.channel.send("Sorry, I can't do that")
+} else {
+  TrackHelper.getRandomTrack(args, 5).then(track => {
+     message.reply(track.url);
+   }).catch(err => {
+     message.reply(Helper.wrap(err));
+  });
+ }
+ 
 function countWordsByUser(args, message) {
   WordService.countWordsByUser(args, message);
 }
