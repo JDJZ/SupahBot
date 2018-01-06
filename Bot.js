@@ -42,9 +42,6 @@ Bot.on('message', message => {
   if (isBotCommand(message)) {
     execute(message.content, message);
   }
-  
-  Bot.user.setgame('https://discord.io/wolfbot')
-  
 });
 
 function showSong(args, message) {
