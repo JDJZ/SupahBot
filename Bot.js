@@ -9,10 +9,6 @@ var killsearch = false
 const blacklist = require("./tagblacklist.json");
 
 var commands = {
-   '!setgame': {
-    execute: playingGame,
-    description: 'Sets the game of the bot.'
-  },
   '!video': {
     execute: getVideo,
     description: 'get a youtube video by search word'
@@ -107,10 +103,6 @@ message.reply("Sorry, I can't do that")
 
 function countWordsByUser(args, message) {
   WordService.countWordsByUser(args, message);
-}
-
-function playingGame(args, message) {
-  Bot.user.setGame('Help');
 }
 
 function getWeather(args, message) {
