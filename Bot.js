@@ -10,7 +10,7 @@ const blacklist = require("./tagblacklist.json");
 
 var commands = {
    '!setgame': {
-    execute: setGame,
+    execute: playingGame,
     description: 'Sets the game of the bot.'
   },
   '!video': {
@@ -109,7 +109,7 @@ function countWordsByUser(args, message) {
   WordService.countWordsByUser(args, message);
 }
 
-function setGame(args, message) {
+function playingGame(args, message) {
   Bot.user.setGame('Help');
 }
 
