@@ -110,7 +110,7 @@ function countWordsByUser(args, message) {
 }
 
 function setGame(args, message) {
-  client.user.setGame(args, message);
+  client.user.setGame("Help");
 }
 
 function getWeather(args, message) {
