@@ -138,7 +138,7 @@ function roll(content, message) {
 }
 
 function devList(content, message) {
-  message.reply('This boy was made by the esteemed <@135821957844172800>');
+  message.reply('This bot was made by the esteemed <@135821957844172800>');
     }
 
 
