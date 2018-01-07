@@ -7,9 +7,6 @@ var WordService = require('./components/wordservice.js');
 var WeatherService = require('./components/weatherservice.js');
 var killsearch = false
 const blacklist = require("./tagblacklist.json");
-bot.on('ready', () => {
-  bot.user.setGame('https://discord.io/traza')
-})
 
 var commands = {
   '!video': {
