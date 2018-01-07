@@ -43,7 +43,6 @@ var commands = {
    '!dev': {
     execute: devList,
     description: 'Print the smelly developer of Traza'
-    
   }
 };
 
@@ -139,9 +138,9 @@ function roll(content, message) {
 }
 
 function devList(content, message) {
-  message.reply('Made by the esteemed <@135821957844172800>');
+  message.reply('This boy was made by the esteemed <@135821957844172800>');
     }
-  
+
 
 
 function isBotCommand(message) {
