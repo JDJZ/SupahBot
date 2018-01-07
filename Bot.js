@@ -46,11 +46,6 @@ var commands = {
   }
 };
 
-
-Bot.on('ready', () => {
-  Bot.user.setPrescence({ game: { name: "discord.io/Traza"} });
-});
-
 Bot.on('message', message => {
   WordService.registerMessage(message);
 
