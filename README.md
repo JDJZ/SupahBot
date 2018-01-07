@@ -1,4 +1,4 @@
-# Welcome to SupahBot.
+# Welcome to Traza.
 
 ### This bot is written in combination with Discord.js.
 
