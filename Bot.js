@@ -139,7 +139,7 @@ function roll(content, message) {
 }
 
 function devList(content, message) {
-  message.reply(Helper.wrap('Made by the esteemed <@135821957844172800>'));
+  message.reply('Made by the esteemed <@135821957844172800>');
     }
   
 }
