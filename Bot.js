@@ -142,7 +142,7 @@ function devList(content, message) {
   message.reply('Made by the esteemed <@135821957844172800>');
     }
   
-}
+
 
 function isBotCommand(message) {
   if (message.content.startsWith('!') && message.author.id != Bot.user.id) {
