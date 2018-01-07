@@ -39,7 +39,14 @@ var commands = {
   '!song': {
     execute: showSong,
     description: 'get the current song'
-  }
+  },
+   '!devs': {
+    execute: devList,
+    description: "Prints the devs of Traza to the channel.",
+    process: function(bot, msg, suffix) {
+      bot.sendMessage(msg.channel, "Made by the esteemed <@135821957844172800>.");
+    }
+  },
 };
 
 Bot.on('message', message => {
