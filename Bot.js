@@ -40,13 +40,11 @@ var commands = {
     execute: showSong,
     description: 'get the current song'
   },
-   '!devs': {
+   '!dev': {
     execute: devList,
-    description: "Prints the devs of Traza to the channel.",
-    process: function(bot, msg, suffix) {
-      bot.sendMessage(msg.channel, "Made by the esteemed <@135821957844172800>.");
+    description: 'Print the smelly developer of Traza'
     }
-  },
+  }
 };
 
 Bot.on('message', message => {
@@ -138,6 +136,12 @@ function getAvailableCommandAsText(command) {
 
 function roll(content, message) {
   message.reply(Helper.wrap('You rolled ' + getRandomNumber(1, 100) + ' (1-100)'));
+}
+
+function devList(content, message) {
+  message.reply(Helper.wrap('"Made by the esteemed <@135821957844172800>");
+    }
+'));
 }
 
 function isBotCommand(message) {
